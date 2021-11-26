@@ -25,7 +25,7 @@ export const List = ({ HOST_API, Store }) => {
 
   return (
     <div>
-      <table>
+      <table className="table table-striped">
         <thead>
           <tr>
             <td>ID</td>
@@ -41,10 +41,20 @@ export const List = ({ HOST_API, Store }) => {
                 <td>{todo.name}</td>
                 <td>{todo.isCompleted === true ? "SI" : "NO"}</td>
                 <td>
-                  <button onClick={() => onDelete(todo.id)}>Eliminar</button>
+                  <button
+                    onClick={() => onDelete(todo.id)}
+                    className="btn btn-danger"
+                  >
+                    Eliminar
+                  </button>
                 </td>
                 <td>
-                  <button onClick={() => onEdit(todo)}>Editar</button>
+                  <button
+                    onClick={() => onEdit(todo)}
+                    className="btn btn-primary"
+                  >
+                    Editar
+                  </button>
                 </td>
               </tr>
             );

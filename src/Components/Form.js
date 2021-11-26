@@ -57,16 +57,28 @@ export const Form = ({ HOST_API, Store }) => {
 
   return (
     <form ref={formRef}>
-      <input
-        type="text"
-        name="name"
-        defaultValue={item.name}
-        onChange={(event) => {
-          setState({ ...state, name: event.target.value });
-        }}
-      ></input>
-      {item.id && <button onClick={onEdit}>Actualizar</button>}
-      {!item.id && <button onClick={onAdd}>Agregar</button>}
+      <div className="mb-3">
+        <h1 className="form-label">INGRESAR TAREAS</h1>
+        <input
+          className="form-control"
+          type="text"
+          name="name"
+          defaultValue={item.name}
+          onChange={(event) => {
+            setState({ ...state, name: event.target.value });
+          }}
+        ></input>
+        {item.id && (
+          <button onClick={onEdit} className="btn btn-warning">
+            Actualizar
+          </button>
+        )}
+        {!item.id && (
+          <button type="button" onClick={onAdd} className="btn btn-success">
+            Agregar
+          </button>
+        )}
+      </div>
     </form>
   );
 };
